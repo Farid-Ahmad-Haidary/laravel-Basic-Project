@@ -35,13 +35,38 @@ class studentController extends Controller
         $photo->move(public_path($save_path), $name_generated);
         // it saves the file path in the database
         $eachPhoto = $save_path. $name_generated;
+        
+        // it does the same for the tazkra file
+        // it takes the file from the request
+        $tazkra = $request->file('tazkra');
+        $tazkra_name_generated = hexdec(uniqid()) . '.' . $tazkra->getClientOriginalExtension();
+        $tazkra_save_path = 'upload/document/';
+        $tazkra->move(public_path($tazkra_save_path), $tazkra_name_generated);
+        $save_tazkra = $tazkra_save_path . $tazkra_name_generated;
+        
+
+
+
+
+        // it saves the video in the database
+        $video = $request->file('video');
+        $video_name_generated = hexdec(uniqid()). '.' . $tazkra->getClientOriginalExtension();
+        $video_save_path = 'upload/video/';
+        $video->move(public_path($video_save_path) , $video_name_generated);
+        $save_video = $video_save_path . $video_name_generated;
+
+
+    
 
 
 
         Student::insert([
             'name' => $request->name,
             'last_name' => $request->last_name,
-            'file' => $eachPhoto 
+            'file' => $eachPhoto,
+            'tazkra' => $save_tazkra,
+            'video' => $save_video
+             
         ]);
         return redirect()->route('students');
     }

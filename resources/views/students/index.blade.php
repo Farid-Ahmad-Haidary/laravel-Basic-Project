@@ -43,7 +43,9 @@
         <th>ID</th>
         <th>Name</th>
         <th>Last Name</th>
-        <th>Uploaded File</th>
+        <th>Photo</th>
+        <th>Tazkra Photo</th>
+        <th>video</th>
       </tr>
     </thead>
     <tbody>
@@ -52,7 +54,12 @@
           <td>{{ $student->id }}</td>
           <td>{{ $student->name }}</td>
           <td>{{ $student->last_name }}</td>
-          <td><img src="{{$student->file }}" width="50" alt=""></td>
+          <td><img src="{{$student->file }}" width="70" height="80" alt=""></td>
+          {{-- <td>{{$student->tazkra}}</td> --}}
+          <td><img src="{{$student->tazkra }}" width="70" height="80" alt=""></td>
+          {{-- <td>{{$student->video}}</td> --}}
+          <td><video width="70" height="80" controls>
+            <source src="{{$student->video}}" type="video/mp4">
         </tr>
       @endforeach
     </tbody>

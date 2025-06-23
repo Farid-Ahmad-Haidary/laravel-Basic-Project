@@ -19,8 +19,16 @@
       <input type="text" name="last_name" id="last_name" style="width:100%; padding:8px; border:1px solid #ccc; border-radius:4px;">
     </div>
     <div style="margin-bottom: 24px;">
-      <label for="file" style="display:block; margin-bottom: 6px;">File</label>
+      <label for="file" style="display:block; margin-bottom: 6px;">Photo</label>
       <input type="file" name="file" id="file" style="width:100%;">
+    </div>
+        <div style="margin-bottom: 24px;">
+      <label for="docfile" style="display:block; margin-bottom: 6px;">Tazkra</label>
+      <input type="file" name="tazkra" id="docfile" style="width:100%;">
+    </div>
+        <div style="margin-bottom: 24px;">
+      <label for="filevieo" style="display:block; margin-bottom: 6px;">Video</label>
+      <input type="file" name="video" id="filevieo" style="width:100%;">
     </div>
     <button type="submit" style="width:100%; padding:10px; background:#007bff; color:#fff; border:none; border-radius:4px; font-size:16px;">Submit</button>
   </form>
