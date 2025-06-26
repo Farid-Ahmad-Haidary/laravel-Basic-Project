@@ -21,3 +21,6 @@ Route::get('/', function () {
 Route::get('/students' , [studentController::class, 'index'])->name('students');
 Route::get('/create', [studentController::class, 'create'])->name('createstudent');
 Route::post('/store', [studentController::class, 'store'])->name('storestudent');
+Route::get('/edit/{id}', [studentController::class, 'edit'])->name('editstudent');
+Route::post('/update/{id}', [studentController::class, 'update'])->name('updatestudent');
+Route::get('/delete/{id}', [studentController::class, 'delete'])->name('deletestudent');

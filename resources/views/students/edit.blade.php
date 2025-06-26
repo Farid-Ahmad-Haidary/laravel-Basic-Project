@@ -50,9 +50,12 @@
   </style>
 </head>
 <body>
-  <form action="{{route('storestudent')}}" method="post" enctype="multipart/form-data" class="form-container">
+  <form action="{{ route('updatestudent', ['id' => $student->id]) }}" method="post" enctype="multipart/form-data" class="form-container">
     @csrf
-    <h2 class="form-title">Add Student</h2>
+    <h2 class="form-title">Update Student</h2>
+    <div class="form-group">
+      <input type="hidden" name="id"  value="{{$student->id}}" class="form-input">
+    </div>
     <div class="form-group">
       <label for="name" class="form-label">Name</label>
       <input type="text" name="name" id="name" value="{{$student->name}}" class="form-input">
@@ -63,7 +66,7 @@
     </div>
     <div class="form-group">
       <label for="file" class="form-label">Photo</label>
-      <input type="file" name="file" id="file" value="{{$student->file}}" class="form-file">
+      <input type="file" name="file" id="file" class="form-file">
     </div>
     <div class="form-group">
       <label for="docfile" class="form-label">Tazkra</label>

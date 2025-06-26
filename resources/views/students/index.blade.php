@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <title>Document</title>
 </head>
 <body>
@@ -46,6 +47,8 @@
         <th>Photo</th>
         <th>Tazkra Photo</th>
         <th>video</th>
+        <th>Edit</th>
+        <th>Delate</th>
       </tr>
     </thead>
     <tbody>
@@ -55,11 +58,20 @@
           <td>{{ $student->name }}</td>
           <td>{{ $student->last_name }}</td>
           <td><img src="{{$student->file }}" width="70" height="80" alt=""></td>
-          {{-- <td>{{$student->tazkra}}</td> --}}
           <td><img src="{{$student->tazkra }}" width="70" height="80" alt=""></td>
-          {{-- <td>{{$student->video}}</td> --}}
           <td><video width="70" height="80" controls>
             <source src="{{$student->video}}" type="video/mp4">
+          </td>
+            <td>
+            <a href="{{ route('editstudent', $student->id) }}" title="Edit">
+              <i class="fa-solid fa-pen-to-square" style="color:#1976d2;"></i>
+            </a>
+            </td>
+            <td>
+            <a href="{{ route('deletestudent', $student->id) }}" title="Delete">
+              <i class="fa-solid fa-trash" style="color:#d32f2f;"></i>
+            </a>
+            </td>
         </tr>
       @endforeach
     </tbody>
